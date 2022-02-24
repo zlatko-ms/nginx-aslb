@@ -37,6 +37,29 @@ The following mandatory variables must be provided :
 | LB_BACKEND_FALLBACK                 | host:port of the fallback serving workload                   |
 
 
+## Usage 
+
+### Running locally 
+
+In order to run the container locally, serving an entry point with port *8080* and redirecting to backends located under  *192.168.4.1:8081* and *192.168.4.1:8082* you can use the following procedure : 
+
+```bash
+echo "LB_PORT=8080" >> vars.txt
+echo "LB_BACKEND_PRIMARY=192.168.4.1:8081" >> vars.txt
+echo "LB_BACKEND_FALLBACK=192.168.4.1:8082" >> vars.txt
+docker pull zlatkoa/nginx-alsb:1.0.0
+docker run -p 8080:8080 --env-file vars.txt -d --name lbexample zlatkoa/nginx-alsb:1.0.0
+```
+
+**Note** : you can use a set of [Helloer](https://github.com/zlatko-ms/helloer) to simulate your backends. 
+
+### Running on Cloud Infra
+
+Please make sure the you provide the *LB_PORT*, *LB_BACKEND_PRIMARY* and *LB_BACKEND_FALLBACK* envronnement variables to your pod/container deployement descriptor.
+
 ## Distribution 
 
-The container is available on the following docker hub location : 
+For containerized deployements you can use the image available on the [Docker Hub](https://hub.docker.com/repository/docker/zlatkoa/nginx-alsb). It is updated by the Github CI/CD worklow on each code change.
+
+
+
