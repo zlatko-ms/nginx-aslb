@@ -66,7 +66,6 @@ You can get the container image by issuing the following commands :
 
 ```bash
 docker pull zlatkoa/nginx-alsb:1.0.0
-helloer-dist-1.0.0.tgz
 ```
 
 
