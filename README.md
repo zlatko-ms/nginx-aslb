@@ -62,4 +62,11 @@ Please make sure the you provide the *LB_PORT*, *LB_BACKEND_PRIMARY* and *LB_BAC
 For containerized deployements you can use the image available on the [Docker Hub](https://hub.docker.com/repository/docker/zlatkoa/nginx-alsb). It is updated by the Github CI/CD worklow on each code change.
 
 
+You can get the container image by issuing the following commands : 
+
+```bash
+docker pull zlatkoa/nginx-alsb:1.0.0
+helloer-dist-1.0.0.tgz
+```
+
 
