@@ -11,13 +11,14 @@ You can use this container and run it on an App Service for Containers in order 
 ## Features
 
 ## Active/Standby http load balancing 
+
 * using embedded TCP checks
-* will use the primary backend unless it is unavailable, switching to fallback backend when this occurs
+* will redirect to the primary backend unless it is unavailable, switching to fallback backend when this occurs
 * restoration to primary if primary is available again
 
 ## Healcheck URL 
 
-In order to check the health of your loadbalancer by the underlying container structure you can use the /_lbcheck url. If the container is running it will reply with a 200 HTTP code with the following payload : 
+In order to check the health of your loadbalancer by the underlying container structure you can use the **/_lbcheck url**. If the container is running it will reply with a 200 HTTP code with the following payload : 
 
 ```json
 { "status":"healthy" }
