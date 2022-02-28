@@ -1,7 +1,7 @@
     
     upstream webapp {
         server ${LB_BACKEND_PRIMARY};
-	    server ${LB_BACKEND_FALLBACK} backup;
+        server ${LB_BACKEND_FALLBACK} backup;
     }
 
     server {
